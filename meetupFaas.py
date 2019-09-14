@@ -136,7 +136,7 @@ def pipeLineRasAutomation(request):
         eng=builderBaseTxt(req['path'])
         if eng=='OK':
             status, msg = 'OK', builderResult(token)
-            mensageDict={}
+            mensageDict,result={},{}
             return response_json(msg, status)
         else: return response_json('ERROR IN RESULT | '+str(eng), 'NOK')
     except Exception as e: return response_json('ERROR | '+str(e),'NOK')
